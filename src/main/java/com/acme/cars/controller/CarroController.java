@@ -7,17 +7,22 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
-@RestController  @RequestMapping("/api/carros")
-@RequiredArgsConstructor  @CrossOrigin(origins = "*")
+@RestController
+@RequestMapping("/api/carros")
+@RequiredArgsConstructor
+@CrossOrigin(origins = "*")
 public class CarroController {
     private final CarroService carroService;
+
     @GetMapping
     public ResponseEntity<List<Carro>> listarTodos() {
         List<Carro> carros = carroService.listarTodos();
         return ResponseEntity.ok(carros);
     }
+
     @GetMapping("/{id}")
     public ResponseEntity<Carro> buscarPorId(@PathVariable Long id) {
         try {

@@ -13,11 +13,17 @@ import java.util.Optional;
 public class SecurityService {
     private final UsuarioService usuarioService;
     private final TokenService tokenService;
+
     public String authenticate(AuthUserDTO authUserDTO) throws AuthenticationException {
         Optional<Usuario> byEmail = usuarioService.findByEmail(authUserDTO.email());
-        if(byEmail.isEmpty()) throw new AuthenticationException("Usuario ou senha incorretos");
+        if (byEmail.isEmpty()) {
+            throw new AuthenticationException("Usuario ou senha incorretos");
+        }
         Usuario usuario = byEmail.get();
-        if(usuario.getPassword().equals(authUserDTO.password())) return tokenService.generateToken(usuario);
-        else throw new AuthenticationException("Usuario ou senha incorretos");
+        if (usuario.getPassword().equals(authUserDTO.password())) {
+            return tokenService.generateToken(usuario);
+        } else {
+            throw new AuthenticationException("Usuario ou senha incorretos");
+        }
     }
 }

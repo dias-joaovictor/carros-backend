@@ -20,10 +20,12 @@ import java.util.Map;
 public class UsuarioController {
     private final UsuarioService usuarioService;
     private final SecurityService securityService;
+
     @GetMapping
     public ResponseEntity<List<Usuario>> getAllUsuario() {
         return ResponseEntity.ok(usuarioService.findAll());
     }
+
     @PostMapping("/login")
     public ResponseEntity<?> autenticate(@RequestBody AuthUserDTO authUserDTO){
         try{
