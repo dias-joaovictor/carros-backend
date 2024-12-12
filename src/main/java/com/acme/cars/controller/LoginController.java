@@ -19,7 +19,7 @@ public class LoginController {
     private final SecurityService securityService;
 
     @PostMapping
-    public ResponseEntity<?> autenticate(@RequestBody AuthUserDTO authUserDTO){
+    public ResponseEntity<?> authenticate(@RequestBody AuthUserDTO authUserDTO){
         try{
             String authenticate = securityService.authenticate(authUserDTO);
             return ResponseEntity.ok(new AuthPayload(authenticate));
