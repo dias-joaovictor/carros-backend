@@ -1,0 +1,21 @@
+name: Build Carros Backend
+
+on:
+  workflow_dispatch:
+  push:
+      branches:
+      - master
+
+jobs:
+  checkout:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+        with:
+          # Specify the branch to check out; replace 'your-branch-name' with the actual branch name
+          ref: 'your-branch-name'
+
+      - name: Display Current Branch
+        run: git branch --show-current
