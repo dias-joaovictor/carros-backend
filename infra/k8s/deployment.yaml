@@ -24,7 +24,16 @@ spec:
         - name: cars-backend
           image: silverfoxjv/cars-backend:latest
           imagePullPolicy: Always
-          env: []
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:mysql://mysql:3306/cars
+            - name: SPRING_DATASOURCE_USERNAME
+              value: cars_user
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: cars_password
+            - name: SPRING_DATASOURCE_DRIVER_CLASS_NAME
+              value: com.mysql.cj.jdbc.Driver
+
           ports:
             - name: http
               containerPort: 8080
