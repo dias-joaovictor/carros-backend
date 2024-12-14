@@ -6,7 +6,7 @@ on:
       paths-ignore:
         - 'infra/**'
       branches:
-      - master
+        - master
 
 jobs:
   checkout:
