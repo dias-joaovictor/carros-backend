@@ -20,7 +20,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: cars-backend
+                name: cars-backend-svc
                 port:
                   name: http
 
@@ -48,6 +48,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: cars-backend
+                name: cars-backend-svc
                 port:
                   name: http
