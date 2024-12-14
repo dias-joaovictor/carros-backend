@@ -3,6 +3,8 @@ name: Build Carros Backend
 on:
   workflow_dispatch:
   push:
+      paths-ignore:
+        - 'infra/**'
       branches:
       - master
 
