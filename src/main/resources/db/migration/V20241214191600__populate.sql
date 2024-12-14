@@ -1,6 +1,5 @@
--- Inserir 130 carros, distribuídos entre 30 fabricantes (assumindo que os fabricantes com id de 1 a 30 já existem)
-
-INSERT INTO carro (modelo, ano, cor, cavalos_de_potencia, fabricante, pais) VALUES
+INSERT INTO carro (modelo, ano, cor, cavalos_de_potencia, fabricante, pais)
+VALUES
 -- Fabricante 1 (Volkswagen)
 ('Golf', 2020, 'Preto', 150, 'Volkswagen', 'Alemanha'),
 ('Polo', 2019, 'Branco', 130, 'Volkswagen', 'Alemanha'),
@@ -148,10 +147,16 @@ INSERT INTO carro (modelo, ano, cor, cavalos_de_potencia, fabricante, pais) VALU
 ('Countryman', 2022, 'Preto', 220, 'Mini', 'Reino Unido');
 
 
-INSERT INTO usuario (nome, cargo, email, avatar, password) VALUES
-                                                               ('Wile E. Coyote', 'Engenheiro de Produtos', 'wile@acme.com', 'https://www.gravatar.com/avatar/89adf1a694e928f9c6da1c1f9b998d1a?s=200', 'senha123'),
-                                                               ('Road Runner', 'Testador de Produtos', 'roadrunner@acme.com', 'https://www.gravatar.com/avatar/af5a6b8ed7b0a37e25b1cf5e9e22a8f2?s=200', 'senha123'),
-                                                               ('Daffy Duck', 'Gerente de Marketing', 'daffy@acme.com', 'https://www.gravatar.com/avatar/daf4b5b81342fe587d5043b3e58a0180?s=200', 'senha123'),
-                                                               ('Bugs Bunny', 'Diretor de TI', 'bugs@acme.com', 'https://www.gravatar.com/avatar/9f0c2cb2d5f8264e2c35d92f3655f2b3?s=200', 'senha123'),
-                                                               ('Bugs Bunny', 'Diretor de TI', 'dias', 'https://www.gravatar.com/avatar/9f0c2cb2d5f8264e2c35d92f3655f2b3?s=200', '123'),
-                                                               ('Elmer Fudd', 'Analista de Suporte', 'elmer@acme.com', 'https://www.gravatar.com/avatar/6be1f3c98be3886b5473b7b947fe82ad?s=200', 'senha123');
+INSERT INTO usuario (nome, cargo, email, avatar, password)
+VALUES ('Wile E. Coyote', 'Engenheiro de Produtos', 'wile@acme.com',
+        'https://www.gravatar.com/avatar/89adf1a694e928f9c6da1c1f9b998d1a?s=200', 'senha123'),
+       ('Road Runner', 'Testador de Produtos', 'roadrunner@acme.com',
+        'https://www.gravatar.com/avatar/af5a6b8ed7b0a37e25b1cf5e9e22a8f2?s=200', 'senha123'),
+       ('Daffy Duck', 'Gerente de Marketing', 'daffy@acme.com',
+        'https://www.gravatar.com/avatar/daf4b5b81342fe587d5043b3e58a0180?s=200', 'senha123'),
+       ('Bugs Bunny', 'Diretor de TI', 'bugs@acme.com',
+        'https://www.gravatar.com/avatar/9f0c2cb2d5f8264e2c35d92f3655f2b3?s=200', 'senha123'),
+       ('João Victor Dias', 'Diretor de TI', 'dias',
+        'https://www.gravatar.com/avatar/9f0c2cb2d5f8264e2c35d92f3655f2b3?s=200', '123'),
+       ('Elmer Fudd', 'Analista de Suporte', 'elmer@acme.com',
+        'https://www.gravatar.com/avatar/6be1f3c98be3886b5473b7b947fe82ad?s=200', 'senha123');

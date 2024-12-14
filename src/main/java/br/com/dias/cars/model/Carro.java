@@ -18,5 +18,4 @@ public class Carro {
     private int cavalosDePotencia;
     private String fabricante;
     private String pais;
-
 }
