@@ -23,6 +23,7 @@ spec:
       containers:
         - name: cars-backend
           image: silverfoxjv/cars-backend:latest
+          imagePullPolicy: Always
           env: []
           ports:
             - name: http
