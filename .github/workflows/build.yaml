@@ -24,6 +24,9 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
+      - name: Start containers
+        run: docker compose up -d
+
       - name: Build with Maven
         run: mvn clean install
 
@@ -41,3 +44,7 @@ jobs:
         run: |
            docker tag cars-backend:latest ${{ secrets.DOCKERHUB_USERNAME }}/cars-backend:latest
            docker push ${{ secrets.DOCKERHUB_USERNAME }}/cars-backend:latest
+
+      - name: Stop containers
+        if: always()
+        run: docker-compose down

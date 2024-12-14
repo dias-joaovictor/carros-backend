@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.1
+    container_name: cars
+    environment:
+      MYSQL_ROOT_PASSWORD: root_cars_password
+      MYSQL_DATABASE: cars
+      MYSQL_USER: cars_user
+      MYSQL_PASSWORD: cars_password
+    ports:
+      - "3306:3306"

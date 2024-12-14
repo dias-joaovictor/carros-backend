@@ -6,23 +6,25 @@ management:
 
 spring:
   application:
-    name: cars
+    name: Cars Backend
   datasource:
-    url: jdbc:h2:mem:db  # URL para o banco de dados H2 em mem?ria
-    driverClassName: org.h2.Driver
-    username: sa
-    password: ''
-  h2:
-    console:
-      enabled: true
-
+    url: jdbc:mysql://localhost:3306/cars
+    username: cars_user
+    password: cars_password
+    driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
-    defer-datasource-initialization: true
     hibernate:
-      ddl-auto: create-drop
-    show-sql: true
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     properties:
       hibernate:
-        format_sql: true  # Formata as queries SQL para facilitar a leitura
-  server:
-    port: 8080
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    clean-disabled: false
+    user: cars_user
+    password: cars_password
+    url: jdbc:mysql://localhost:3306/cars
