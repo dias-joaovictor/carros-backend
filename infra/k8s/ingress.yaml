@@ -41,7 +41,7 @@ spec:
         - "*.at-dias.cloud"
       secretName: tls-at-dias-cloud-ingress-dns
   rules:
-    - host: radarr-external.at-dias.cloud
+    - host: cars-backend-external.at-dias.cloud
       http:
         paths:
           - path: "/"
