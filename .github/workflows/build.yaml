@@ -24,6 +24,14 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
+      - name: Cache Maven dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
       - name: Start containers
         run: docker compose up -d
 
