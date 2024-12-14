@@ -28,3 +28,12 @@ spring:
     user: cars_user
     password: cars_password
     url: jdbc:mysql://localhost:3306/cars
+
+
+cors:
+  allowed:
+    origins: "*"
+    methods: GET,POST,PUT,DELETE,OPTIONS
+    headers: Content-Type,Authorization
+  allow:
+    credentials: true
