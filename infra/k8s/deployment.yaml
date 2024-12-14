@@ -26,14 +26,17 @@ spec:
           imagePullPolicy: Always
           env:
             - name: SPRING_DATASOURCE_URL
-              value: jdbc:mysql://mysql:3306/cars
+              value: jdbc:mysql://mysql-cluster.mysql.svc.cluster.local:3306/cars
+            - name: SPRING_FLYWAY_URL
+              value: jdbc:mysql://mysql-cluster.mysql.svc.cluster.local:3306/cars
             - name: SPRING_DATASOURCE_USERNAME
               value: cars_user
             - name: SPRING_DATASOURCE_PASSWORD
               value: cars_password
-            - name: SPRING_DATASOURCE_DRIVER_CLASS_NAME
-              value: com.mysql.cj.jdbc.Driver
-
+            - name: SPRING_FLYWAY_USER
+              value: cars_user
+            - name: SPRING_FLYWAY_PASSWORD
+              value: cars_password
           ports:
             - name: http
               containerPort: 8080
