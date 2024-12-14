@@ -1,4 +1,4 @@
-INSERT INTO carro (modelo, ano, cor, cavalos_de_potencia, fabricante, pais)
+INSERT INTO carro (modelo, ano, cor, cavalosDePotencia, fabricante, pais)
 VALUES
 -- Fabricante 1 (Volkswagen)
 ('Golf', 2020, 'Preto', 150, 'Volkswagen', 'Alemanha'),

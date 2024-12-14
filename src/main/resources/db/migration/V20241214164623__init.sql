@@ -4,7 +4,7 @@ CREATE TABLE carro
     modelo              VARCHAR(255) NOT NULL,
     ano                 INT          NOT NULL,
     cor                 VARCHAR(255) NOT NULL,
-    cavalos_de_potencia INT          NOT NULL,
+    cavalosDePotencia INT          NOT NULL,
     fabricante          VARCHAR(255) NOT NULL,
     pais                VARCHAR(255) NOT NULL
 );
