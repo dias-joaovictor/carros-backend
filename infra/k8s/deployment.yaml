@@ -7,6 +7,7 @@ metadata:
     app.kubernetes.io/instance: cars-backend
     app.kubernetes.io/name: cars-backend
 spec:
+  revisionHistoryLimit: 2
   replicas: 1
   selector:
     matchLabels:
@@ -26,9 +27,9 @@ spec:
           imagePullPolicy: Always
           env:
             - name: SPRING_DATASOURCE_URL
-              value: jdbc:mysql://mysql-cluster.mysql.svc.cluster.local:3306/cars
+              value: jdbc:mysql://mysql-db-instances.mysql.svc.cluster.local:3306/cars
             - name: SPRING_FLYWAY_URL
-              value: jdbc:mysql://mysql-cluster.mysql.svc.cluster.local:3306/cars
+              value: jdbc:mysql://mysql-db-instances.mysql.svc.cluster.local:3306/cars
             - name: SPRING_DATASOURCE_USERNAME
               value: cars_user
             - name: SPRING_DATASOURCE_PASSWORD
