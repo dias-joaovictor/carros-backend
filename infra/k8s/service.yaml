@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cars-backend-svc
+  namespace: cars-backend
+spec:
+  selector:
+    app.kubernetes.io/instance: cars-backend
+    app.kubernetes.io/name: cars-backend
+  ports:
+    - name: http
+      port: 8080
+      protocol: TCP
+      targetPort: http
+  type: ClusterIP

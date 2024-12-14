@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cars-backend
+  namespace: cars-backend
+  labels:
+    app.kubernetes.io/instance: cars-backend
+    app.kubernetes.io/name: cars-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: cars-backend
+      app.kubernetes.io/name: cars-backend
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: cars-backend
+        app.kubernetes.io/name: cars-backend
+    spec:
+      containers:
+        - name: cars-backend
+          image: silverfoxjv/cars-backend:latest
+          env: []
+          ports:
+            - name: http
+              containerPort: 8080
